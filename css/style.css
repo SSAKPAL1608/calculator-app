@@ -1,0 +1,44 @@
+:root {
+    --bg-color: #ECF2F8;
+    --white-color: #fff;
+    --primary-color: #733FC8;
+    --primary-accent-color: #A775F1;
+    --secondary-color: #48556A;
+    --tertiary-color: #19202D;
+    --lightest-gray-color: #CFCFCF;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    /* color: var(--white-color);
+    background-color: var(--bg-color); */
+    margin: 4em auto;
+}
+
+h2,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
+/* attribution styles */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    }
+
+    .attribution a {
+    color: hsl(228, 45%, 44%);
+    }

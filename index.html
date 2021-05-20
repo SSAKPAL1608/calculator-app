@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./css/style.css">
   <title>Frontend Mentor | Calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+
   </style>
 </head>
+
 <body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">calc</h1>
+      <p>THEME</p>
+      <!-- slider switch code -->
+      <!-- add in localstorage check for prefers-color-scheme -->
+    </div>
+    <div class="display">
+      <input type="text" placeholder="399,981">
+    </div>
+    <div class="keyboard">
+      <button class="btn" id="seven">7</button>
+      <button class="btn" id="eight">8</button>
+      <button class="btn" id="nine">9</button>
+      <button class="btn" id="delete">DEL</button>
+      <button class="btn" id="four">4</button>
+      <button class="btn" id="five">5</button>
+      <button class="btn" id="six">6</button>
+      <button class="btn" id="add">+</button>
+      <button class="btn" id="one">1</button>
+      <button class="btn" id="two">2</button>
+      <button class="btn" id="three">3</button>
+      <button class="btn" id="subtract">-</button>
+      <button class="btn" id="decimal">.</button>
+      <button class="btn" id="zero">0</button>
+      <button class="btn" id="divide">/</button>
+      <button class="btn" id="multiply">x</button>
+      <button class="btn" id="reset">RESET</button>
+      <button class="btn" id="equal">=</button>
+    </div> <!-- end keyboard -->
+  </div> <!-- end container -->
 
-
-  
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
+
 </html>
