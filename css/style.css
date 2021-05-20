@@ -1,44 +1,194 @@
-:root {
-    --bg-color: #ECF2F8;
-    --white-color: #fff;
-    --primary-color: #733FC8;
-    --primary-accent-color: #A775F1;
-    --secondary-color: #48556A;
-    --tertiary-color: #19202D;
-    --lightest-gray-color: #CFCFCF;
+[color-scheme="theme1"] {
+    /* background colors */
+    --main-bg-color: hsl(222, 26%, 31%);
+    --keypad-toggle-bg-color: hsl(223, 31%, 20%);
+    --screen-bg-color: hsl(224, 36%, 15%);
+    /* keyboard colors */
+    --function-key-bg-color: hsl(225, 21%, 49%);
+    --function-key-shadow-color: hsl(224, 28%, 35%);
+    --equal-key-bg-color: hsl(6, 63%, 50%);
+    --equal-key-shadow-color: hsl(6, 70%, 34%);
+    --primary-key-bg-color: hsl(30, 25%, 89%);
+    --primary-key-shadow-color: hsl(28, 16%, 65%);
+    /* text colors */
+    --text-white-color:#fff;
+    --text-secondary-color: hsl(221, 14%, 31%);
 }
+
+[color-scheme="theme2"] {
+    /* background colors */
+    --main-bg-color: hsl(0, 0%, 90%);
+    --keypad-toggle-bg-color: hsl(0, 5%, 81%);
+    --screen-bg-color: hsl(0, 0%, 93%);
+    /* keyboard colors */
+    --function-key-bg-color: hsl(185, 42%, 37%);
+    --function-key-shadow-color: hsl(185, 58%, 25%);
+    --equal-key-bg-color:  hsl(25, 98%, 40%);
+    --equal-key-shadow-color: hsl(25, 99%, 27%);
+    --primary-key-bg-color: hsl(45, 7%, 89%);
+    --primary-key-shadow-color: hsl(35, 11%, 61%);
+    /* text colors */
+    --text-primary-color: hsl(60, 10%, 19%);
+    --text-secondary-color: hsl(0, 0, 100%);
+}
+
+
+[color-scheme="theme3"] {
+    /* background colors */
+    --main-bg-color: hsl(268, 75%, 9%);
+    --keypad-toggle-bg-color: hsl(268, 71%, 12%);
+    --screen-bg-color: hsl(268, 71%, 12%);
+    /* keyboard colors */
+    --function-key-bg-color: hsl(281, 89%, 26%);
+    --function-key-shadow-color: hsl(285, 91%, 52%);
+    --equal-key-bg-color:  hsl(176, 100%, 44%);
+    --equal-key-shadow-color: hsl(177, 92%, 70%);
+    --primary-key-bg-color: hsl(268, 47%, 21%);
+    --primary-key-shadow-color: hsl(290, 70%, 36%);
+    /* text colors */
+    --text-primary-color: hsl(52, 100%, 62%);
+    --text-secondary-color: hsl(198, 20%, 13%);
+    --text-white-color: #fff;
+}
+
 
 body {
     font-family: 'Spartan', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    /* color: var(--white-color);
-    background-color: var(--bg-color); */
+    color: var(--white-color);
+    background-color: var(--main-bg-color);
     margin: 4em auto;
 }
 
+/* typography */
+h1,
 h2,
-p {
+p,
+button,
+input {
     margin: 0;
     padding: 0;
     font-family: 'Spartan', sans-serif;
+    font-weight: 700;
 }
 
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: .75rem;
+}
+
+input {
+    font-size: 2rem;
+    text-align: right;
+}
+
+button {
+    font-size: 1.75rem;
+}
+
+.btn-function-key,
+.btn-equal-key {
+    font-size: 1rem;
+}
+
+/* layout */
+
 .container {
+    border: 1px magenta solid;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1440px;
+    max-width: 540px;
     margin: 0 auto;
 }
 
+.header {
+    
+    color: var(--text-primary-color);
+    border: 1px limegreen solid;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-areas: 
+        "title . theme-numbers"
+        "title theme switch-toggle";
+}
+.title {
+    grid-area: title;
+    border: 1px solid cyan;
+}
+.theme {
+    border: 1px dodgerblue solid;
+    grid-area: theme;
+}
+
+.theme-numbers {
+    border: 1px goldenrod solid;
+    grid-area: theme-numbers;
+}
+
+.switch-toggle {
+    border: 1px brown solid;
+    grid-area: switch-toggle;
+}
+
+.display {
+    background: var(--screen-bg-color);
+    padding: 2em;
+    color: var(--text-primary-color);
+}
+
+.display > input {
+    background: var(--screen-bg-color);
+    color: var(--text-primary-color)
+}
+
+.keyboard {
+    background: var(--keypad-toggle-bg-color);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    padding: 1em;
+}
+
+.btn {
+    height: 4rem;
+    width: 4rem;
+}
+
+
+/* toggle switch */
+.switch-toggle {
+    float: left;
+    background: #242729;
+ }
+ .switch-toggle input {
+   position: absolute;
+   opacity: 0;
+ }
+ .switch-toggle input + label {
+   padding: 7px;
+   float:left;
+   color: #fff;
+   cursor: pointer;
+ }
+ .switch-toggle input:checked + label {
+   background: green;
+   border-radius: 100%;
+ }
+
+
+ 
 
 /* attribution styles */
 .attribution {
     font-size: 11px;
     text-align: center;
-    }
+}
 
-    .attribution a {
+.attribution a {
     color: hsl(228, 45%, 44%);
-    }
+}
