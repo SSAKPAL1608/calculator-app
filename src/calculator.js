@@ -73,7 +73,7 @@ function updateDisplay() {
     // select the element with class of `calculator-screen`
     const display = document.getElementById('display')
     // update the value of the element with the contents of `displayValue`
-    display.textContent = calculator.displayValue;
+    display.textContent = Number(calculator.displayValue).toLocaleString();
 }
 
 updateDisplay();

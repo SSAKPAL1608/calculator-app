@@ -14,6 +14,8 @@
     /* text colors */
     --text-primary-color:hsl(221, 14%, 31%);
     --text-secondary-color: #fff;
+    --text-function-key-color: #fff;
+    --text-equal-key-color: #fff;
 }
 
 [color-scheme="theme2"] {
@@ -32,6 +34,8 @@
     /* text colors */
     --text-primary-color: hsl(60, 10%, 19%);
     --text-secondary-color: hsl(0, 0, 100%);
+    --text-function-key-color: #fff;
+    --text-equal-key-color: #fff;
 }
 
 
@@ -52,6 +56,8 @@
     --text-primary-color: hsl(52, 100%, 62%);
     --text-secondary-color: hsl(198, 20%, 13%);
     --text-white-color: #fff;
+    --text-function-key-color: #fff;
+    --text-equal-key-color: #000;
 }
 
 
@@ -177,8 +183,11 @@ button {
      width: 16px;
      border-radius: 50%;
      opacity: 0;
-     /* z-index: 90; */
 
+ }
+
+ .toggle:hover {
+    filter: brightness(1.33);
  }
  .toggled-on {
     opacity: 1;
@@ -221,8 +230,7 @@ button {
 
 .keyboard {
     grid-area: keyboard;
-    background: var(--keypad-toggle-bg-color);
-    
+    background: var(--keypad-toggle-bg-color);    
     display: grid;
     grid-template-columns: repeat(4, minmax(60px, 1fr));
     grid-template-rows: repeat(5,minmax(60px, 1fr));
@@ -233,7 +241,6 @@ button {
 }
 
 .btn {
-
     border-radius: 5px;
     outline: none;
     border: none;
@@ -245,22 +252,23 @@ button {
 .btn-function-key {
     background: var(--function-key-bg-color);
     box-shadow: 0 4px 0 0 var(--function-key-shadow-color);
-    color: var(--text-secondary-color);
+    color: var(--text-function-key-color);
 }
 
 .btn-equal-key {
     grid-column: 3 / 5;
     background: var(--equal-key-bg-color);
     box-shadow: 0 4px 0 0 var(--equal-key-shadow-color);
-    color: var(--text-secondary-color);
+    color: var(--text-equal-key-color);
 }
 
 .btn-reset-key {
     grid-column: 1 / 3;
-    
-
 }
 
+.btn:hover {
+    filter: brightness(1.6) saturate(.9);
+}
 
 
 /* @media (min-width: 400px) {
