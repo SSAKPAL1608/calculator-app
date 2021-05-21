@@ -11,7 +11,7 @@
     --primary-key-bg-color: hsl(30, 25%, 89%);
     --primary-key-shadow-color: hsl(28, 16%, 65%);
     /* text colors */
-    --text-white-color:#fff;
+    --text-primary-color:#fff;
     --text-secondary-color: hsl(221, 14%, 31%);
 }
 
@@ -81,9 +81,10 @@ p {
     font-size: .75rem;
 }
 
-input {
+.display {
     font-size: 2rem;
     text-align: right;
+    color: var(--text-primary-color);
 }
 
 button {
@@ -135,15 +136,19 @@ button {
     grid-area: switch-toggle;
 }
 
-.display {
+.container.display {
     background: var(--screen-bg-color);
     padding: 2em;
     color: var(--text-primary-color);
+
 }
 
-.display > input {
+.display {
     background: var(--screen-bg-color);
-    color: var(--text-primary-color)
+    width:400px;
+    height: 50px;
+    padding: 1em;
+
 }
 
 .keyboard {
