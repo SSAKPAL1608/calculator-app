@@ -11,50 +11,35 @@ const calculator = {
 const existingTheme = localStorage.getItem('calculator-theme')
 const themeToggles = document.querySelectorAll('label')
 
+
 function toggleTheme(switchToTheme) {
-    console.log('clicked', switchToTheme)
-    //console.log(theme1, theme2, theme3)
-    // Default to light theme, since that is starting theme
-    // window.theme = typeof(window.theme)==='string' ? window.theme : 'theme1';
-    // console.log(window.theme)
-    // var switchToTheme = window.theme === 'theme1' ? 'theme2' : 'theme1';
-    // window.theme = switchToTheme;
     document.querySelector('body').setAttribute('color-scheme', switchToTheme)
     themeToggles.forEach(theme => theme.classList.remove('toggled-on'))
-    // themeToggles.forEach(theme => {
-    //     console.log(theme.attributes[0].value)
-    //     console.log(theme.attributes[0], switchToTheme)
-    //     if(theme.attributes[0] === switchToTheme) {
-    //         theme.classList.add('toggled-on')
-    //     }
-    // })
+
     switchToTheme === 'theme1' ? themeToggles[0].classList.add('toggled-on') : switchToTheme === 'theme2' ? themeToggles[1].classList.add('toggled-on') : themeToggles[2].classList.add('toggled-on')
     localStorage.setItem('calculator-theme', switchToTheme ) 
-    //console.log(themeToggles)
+
 }
 
-
 theme1.addEventListener('click', () => {
-
     toggleTheme('theme1')
 })
 
 theme2.addEventListener('click', () => {
-
     toggleTheme('theme2')
 })
 
 theme3.addEventListener('click', () => {
-
     toggleTheme('theme3')
 })
 
+
+// check localstorage for a saved them, and then load it
 if(existingTheme) {
-    //console.log(existingTheme)
     toggleTheme(existingTheme)
 }
 
-
+// handle the input of numbers
 function inputDigit(digit) {
     const {
         displayValue,
@@ -70,13 +55,13 @@ function inputDigit(digit) {
 }
 
 function updateDisplay() {
-    // select the element with class of `calculator-screen`
+    // select the element with id of `display`
     const display = document.getElementById('display')
     // update the value of the element with the contents of `displayValue`
     display.textContent = Number(calculator.displayValue).toLocaleString();
 }
 
-updateDisplay();
+//updateDisplay();
 
 function handleOperator(nextOperator) {
     const {
@@ -118,6 +103,7 @@ function calculate(firstOperand, secondOperand, operator) {
     return secondOperand;
 }
 
+// 
 function resetCalculator() {
     calculator.displayValue = '0';
     calculator.firstOperand = null;
@@ -125,6 +111,7 @@ function resetCalculator() {
     calculator.operator = null;
 }
 
+// handle the use of the mouse as input device
 buttons.forEach(button => {
     button.addEventListener('click', e => {
         e.preventDefault()
@@ -159,6 +146,7 @@ buttons.forEach(button => {
     })
 })
 
+// handle the use of the keyboard as input device
 document.body.addEventListener('keydown', e => {
     let {
         key
