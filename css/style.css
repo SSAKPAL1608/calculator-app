@@ -303,6 +303,8 @@ label {
     .display {
         font-size: 2.5rem
     }
+
+
 }
  
 @media (min-width: 450px) {
@@ -314,13 +316,21 @@ label {
     .display {
         font-size: 3rem
     }
+    
+    .attribution div{
+        display: inline;
+    }
 }
 
 /* attribution styles */
 .attribution {
-    font-size: 11px;
+    font-size: 12px;
     text-align: center;
     color: var(--screen-text-color);
+}
+
+.attribution div {
+    margin-bottom: 1em;
 }
 
 .attribution a {
