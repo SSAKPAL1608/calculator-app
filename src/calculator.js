@@ -11,16 +11,24 @@ const calculator = {
 const existingTheme = localStorage.getItem('calculator-theme')
 const themeToggles = document.querySelectorAll('label')
 
-
+// handle the changes to the theme
 function toggleTheme(switchToTheme) {
     document.querySelector('body').setAttribute('color-scheme', switchToTheme)
+    // remove 'toggled-on' from all the labels
     themeToggles.forEach(theme => theme.classList.remove('toggled-on'))
 
+    // add 'toggled-on' to the one desired label (themeToggles) 
     switchToTheme === 'theme1' ? themeToggles[0].classList.add('toggled-on') : switchToTheme === 'theme2' ? themeToggles[1].classList.add('toggled-on') : themeToggles[2].classList.add('toggled-on')
-    localStorage.setItem('calculator-theme', switchToTheme ) 
-
+    // save the new value to local storage
+    localStorage.setItem('calculator-theme', switchToTheme)
 }
 
+// check localstorage for a saved them, and then load it
+if (existingTheme) {
+    toggleTheme(existingTheme)
+}
+
+// event listeners for radio input's
 theme1.addEventListener('click', () => {
     toggleTheme('theme1')
 })
@@ -32,12 +40,6 @@ theme2.addEventListener('click', () => {
 theme3.addEventListener('click', () => {
     toggleTheme('theme3')
 })
-
-
-// check localstorage for a saved them, and then load it
-if(existingTheme) {
-    toggleTheme(existingTheme)
-}
 
 // handle the input of numbers
 function inputDigit(digit) {
@@ -62,6 +64,7 @@ function updateDisplay() {
 }
 
 //updateDisplay();
+
 
 function handleOperator(nextOperator) {
     const {
@@ -89,7 +92,7 @@ function handleOperator(nextOperator) {
 }
 
 function calculate(firstOperand, secondOperand, operator) {
-    console.log('operator = ', operator)
+
     if (operator === '+') {
         return firstOperand + secondOperand;
     } else if (operator === '-') {
@@ -103,7 +106,6 @@ function calculate(firstOperand, secondOperand, operator) {
     return secondOperand;
 }
 
-// 
 function resetCalculator() {
     calculator.displayValue = '0';
     calculator.firstOperand = null;
