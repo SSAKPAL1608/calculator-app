@@ -14,9 +14,6 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -31,83 +28,43 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![mobile - default theme](https://user-images.githubusercontent.com/63062052/119277928-f65c0f80-bbe7-11eb-80c9-144d561ff46a.png)
+![tablet - light theme](https://user-images.githubusercontent.com/63062052/119277970-286d7180-bbe8-11eb-8aca-58af3a9ada97.png)
+![desktop - vivid theme](https://user-images.githubusercontent.com/63062052/119277990-43d87c80-bbe8-11eb-87be-848899a2f088.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [@github](https://github.com/davidrhyne/calculator-app)
+- Live Site URL: [@github pages](https://davidrhyne.github.io/calculator-app/)
 
 ## My process
 
+I started by reviewing the design specification.  I then started the markup knowing that the mobile and desktop layouts were very similiar and would be managed primarily by CSS grid. Afer the markup, I stated the CSS styling with mobile-first workflow and then created two media queries to handle the transition from the mobile to the desktop layouts.  After completing 95% of the styling, I started coding the JavaScript.  The process of coding logic, especially the theme switch, lead to several iterations of changing the markup and CSS to match changes introduce with JavaScript.
+
 ### Built with
 
+- Mobile-first workflow
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- JavaScript
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+This was another excellent exercise in CSS grid and flexbox, so I deepened my knowledge on both of those topics.  And this was the first frontend mentor project that included JavaScript, so this a great exercise in functional programming, event listeners, and local storage.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+While working on this project, I was thinking the next project should include React, so that will be the focus for my next project.  Likewise, I am really enjoying the practice I am getting using CSS grid and flexbox.
 
 ### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [How to build a Calculator App with JavaScrip](https://freshman.tech/calculator/) - This is an excellent resource for the javascript for a calculator app.
+- [Radio button toggle switch by Mike Hemberger](https://codepen.io/JiveDig/pen/jbdJXR) - The codepen was very helpful for a 3-position radio input which was used for the theme switch.
+- [Kevin Powell](https://www.kevinpowell.co/) - Kevin Powell is an excellent teacher and I relied heavily on the notes that I took from his CSS courses taught on scrimba.com.
+- [A Complete Guide to Grid ](https://css-tricks.com/snippets/css/complete-guide-grid/) -  I have found css.tricks.com to be a valuable resourse for grid, flexbox, and all things CSS.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@davidrhyne](https://www.frontendmentor.io/profile/davidrhyne)
+- Twitter - [@DavidRhyne16](https://www.twitter.com/DavidRhyne16)
