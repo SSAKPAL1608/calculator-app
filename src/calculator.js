@@ -26,6 +26,8 @@ function toggleTheme(switchToTheme) {
 // check localstorage for a saved them, and then load it
 if (existingTheme) {
     toggleTheme(existingTheme)
+} else {
+    toggleTheme('theme1')
 }
 
 // event listeners for radio input's
@@ -121,7 +123,6 @@ buttons.forEach(button => {
             textContent
         } = e.target
 
-        console.log(textContent)
         switch (textContent) {
             case '+':
             case '-':

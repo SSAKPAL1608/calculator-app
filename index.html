@@ -16,11 +16,13 @@
     <div class="header">
       <h1 class="title">calc</h1>
       <p class="theme">THEME</p>
+      <!-- 'labels' toggle switch for theme -->
       <div class="theme-numbers">
         <span>1</span>
         <span>2</span>
         <span>3</span>
       </div>
+      <!-- toggle switch for theme -->
       <div class="switch-toggle switch-3 switch-candy">
 
         <input id="theme1" name="state-d" type="radio" />
@@ -33,7 +35,8 @@
         <label for="theme3" class="toggle"></label>
 
       </div>
-    </div>
+    </div>  <!-- end header container -->
+    
     <div class="container-display">
       <p class="display" id="display">0</p>
     </div>
@@ -41,21 +44,21 @@
       <button class="btn">7</button>
       <button class="btn">8</button>
       <button class="btn">9</button>
-      <button class="btn btn-function-key">DEL</button>
+      <button class="btn btn-function-key" aria-label="delete">DEL</button>
       <button class="btn">4</button>
       <button class="btn">5</button>
       <button class="btn">6</button>
-      <button class="btn">+</button>
+      <button class="btn" aria-label="addition">+</button>
       <button class="btn">1</button>
       <button class="btn">2</button>
       <button class="btn">3</button>
-      <button class="btn">-</button>
-      <button class="btn">.</button>
+      <button class="btn" aria-label="subtract">-</button>
+      <button class="btn" aria-label="decimal">.</button>
       <button class="btn">0</button>
-      <button class="btn">/</button>
-      <button class="btn">x</button>
-      <button class="btn btn-function-key btn-reset-key">RESET</button>
-      <button class="btn btn-equal-key">=</button>
+      <button class="btn" aria-label="divide">/</button>
+      <button class="btn" aria-label="multiply">x</button>
+      <button class="btn btn-function-key btn-reset-key" >RESET</button>
+      <button class="btn btn-equal-key" aria-label="equals">=</button>
     </div> <!-- end keyboard -->
   </div> <!-- end container -->
 
