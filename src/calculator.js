@@ -8,7 +8,7 @@ const calculator = {
     haveSecondOperand: false,
     operator: null
 }
-const existingTheme = localStorage.getItem('calculator-theme')
+const existingTheme = localStorage.getItem('calculator-theme') ? localStorage.getItem('calculator-theme') : 'theme1'
 const themeToggles = document.querySelectorAll('label')
 
 // handle the changes to the theme
@@ -26,9 +26,7 @@ function toggleTheme(switchToTheme) {
 // check localstorage for a saved them, and then load it
 if (existingTheme) {
     toggleTheme(existingTheme)
-} else {
-    toggleTheme('theme1')
-}
+} 
 
 // event listeners for radio input's
 theme1.addEventListener('click', () => {
