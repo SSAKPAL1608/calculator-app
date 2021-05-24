@@ -63,9 +63,6 @@ function updateDisplay() {
     display.textContent = Number(calculator.displayValue).toLocaleString();
 }
 
-//updateDisplay();
-
-
 function handleOperator(nextOperator) {
     const {
         firstOperand,
@@ -113,6 +110,39 @@ function resetCalculator() {
     calculator.operator = null;
 }
 
+function handleInput(input) {
+    console.log(input)
+    switch (input) {
+        case '+':
+        case '-':
+        case 'x':
+        case '/':
+        case '=':
+            handleOperator(input);
+            break;
+        case 'DEL':
+            calculator.displayValue = calculator.displayValue.slice(0, -1)
+            break
+        case 'delete':
+            calculator.displayValue = calculator.displayValue.slice(0, -1)
+            break
+        case 'backspace':
+            calculator.displayValue = calculator.displayValue.slice(0, -1)
+            break            
+        case '.':
+            !calculator.displayValue.includes('.') ? calculator.displayValue += '.' : null
+            break
+        case 'RESET':
+            resetCalculator()
+            break
+        default:
+            if (Number.isInteger(parseFloat(input))) {
+                inputDigit(input);
+            }
+    }
+    updateDisplay();
+}
+
 // handle the use of the mouse as input device
 buttons.forEach(button => {
     button.addEventListener('click', e => {
@@ -120,30 +150,8 @@ buttons.forEach(button => {
         const {
             textContent
         } = e.target
-
-        switch (textContent) {
-            case '+':
-            case '-':
-            case 'x':
-            case '/':
-            case '=':
-                handleOperator(textContent);
-                break;
-            case 'DEL':
-                calculator.displayValue = calculator.displayValue.slice(0, -1)
-                break
-            case '.':
-                !calculator.displayValue.includes('.') ? calculator.displayValue += '.' : null
-                break
-            case 'RESET':
-                resetCalculator()
-                break
-            default:
-                if (Number.isInteger(parseFloat(textContent))) {
-                    inputDigit(textContent);
-                }
-        }
-        updateDisplay();
+        // call the function to handle the input
+        handleInput(textContent)
     })
 })
 
@@ -152,33 +160,11 @@ document.body.addEventListener('keydown', e => {
     let {
         key
     } = e
+    
     key = key.toLowerCase()
     key === 'enter' ? key = "=" : null
-
-    switch (key) {
-        case '+':
-        case '-':
-        case 'x':
-        case '/':
-        case '=':
-            handleOperator(key);
-            break;
-        case 'delete':
-            calculator.displayValue = calculator.displayValue.slice(0, -1)
-            break
-        case 'backspace':
-            calculator.displayValue = calculator.displayValue.slice(0, -1)
-            break
-        case '.':
-            !calculator.displayValue.includes('.') ? calculator.displayValue += '.' : null
-            break
-        case 'RESET':
-            resetCalculator()
-            break
-        default:
-            if (Number.isInteger(parseFloat(key))) {
-                inputDigit(key);
-            }
-    }
-    updateDisplay();
+    key === '*' ? key = "x" : null
+    
+    // call the function to handle the input
+    handleInput(key)
 })
