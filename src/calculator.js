@@ -111,7 +111,7 @@ function resetCalculator() {
 }
 
 function handleInput(input) {
-    console.log(input)
+    
     switch (input) {
         case '+':
         case '-':
@@ -160,7 +160,7 @@ document.body.addEventListener('keydown', e => {
     let {
         key
     } = e
-    
+
     key = key.toLowerCase()
     key === 'enter' ? key = "=" : null
     key === '*' ? key = "x" : null
