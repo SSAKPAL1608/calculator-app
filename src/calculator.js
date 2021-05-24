@@ -14,7 +14,7 @@ const decimalPercision = 10
 
 // handle the changes to the theme
 function toggleTheme(switchToTheme) {
-    document.querySelector('body').setAttribute('color-scheme', switchToTheme)
+    document.documentElement.setAttribute('data-theme', switchToTheme)
     // remove 'toggled-on' from all the labels
     themeToggles.forEach(theme => theme.classList.remove('toggled-on'))
 
@@ -44,6 +44,7 @@ theme3.addEventListener('click', () => {
 
 // handle the input of numbers
 function inputDigit(digit) {
+
     const {
         displayValue,
         haveSecondOperand
@@ -53,7 +54,9 @@ function inputDigit(digit) {
         calculator.displayValue = digit;
         calculator.haveSecondOperand = false;
     } else {
-        calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+        if(calculator.displayValue.length <= 10) {
+            calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+        }
     }
 }
 
@@ -74,7 +77,7 @@ function updateDisplay() {
     // select the element with id of `display`
     const display = document.getElementById('display')
     // update the value of the element with the contents of `displayValue`
-    display.textContent = Number(calculator.displayValue).toLocaleString('en-US', { maximumFractionDigits: decimalPercision });
+    display.textContent = Number(calculator.displayValue) <= 999999999 ? Number(calculator.displayValue).toLocaleString('en-US', { maximumFractionDigits: decimalPercision }) : Number(calculator.displayValue).toExponential(4) ;
 }
 
 function handleOperator(nextOperator) {
@@ -85,7 +88,7 @@ function handleOperator(nextOperator) {
     } = calculator
     const inputValue = parseFloat(displayValue);
 
-    if (operator && calculator.haveSecondOperand) {
+    if (operator !== '=' && calculator.haveSecondOperand) {
         calculator.operator = nextOperator;
         return;
     }
@@ -94,7 +97,8 @@ function handleOperator(nextOperator) {
         calculator.firstOperand = inputValue;
     } else if (operator) {
         const result = calculate(firstOperand, inputValue, operator);
-        calculator.displayValue = `${parseFloat(result.toFixed(decimalPercision))}`;
+
+        calculator.displayValue =  `${parseFloat(result.toFixed(decimalPercision))}`;
         calculator.firstOperand = result;
     }
 
@@ -103,17 +107,14 @@ function handleOperator(nextOperator) {
 }
 
 function calculate(firstOperand, secondOperand, operator) {
-
-    if (operator === '+') {
+    if (operator === '+' ) {
         return firstOperand + secondOperand;
-    } else if (operator === '-') {
+    } else if (operator === '-') {        
         return firstOperand - secondOperand;
-    } else if (operator === 'x') {
+    } else if (operator === 'x') {        
         return firstOperand * secondOperand;
-    } else if (operator === '/') {
-        return firstOperand / secondOperand;
-    }
-
+    } else if (operator === '/') {        
+        return firstOperand / secondOperand;}
     return secondOperand;
 }
 
@@ -125,7 +126,6 @@ function resetCalculator() {
 }
 
 function handleInput(input) {
-    
     switch (input) {
         case '+':
         case '-':
@@ -164,17 +164,17 @@ buttons.forEach(button => {
         const {
             textContent
         } = e.target
+        document.documentElement.focus()
         // call the function to handle the input
         handleInput(textContent)
     })
 })
 
 // handle the use of the keyboard as input device
-document.body.addEventListener('keydown', e => {
+document.body.addEventListener('keyup', e => {
     let {
         key
     } = e
-
     key = key.toLowerCase()
     key === 'enter' ? key = "=" : null
     key === '*' ? key = "x" : null
