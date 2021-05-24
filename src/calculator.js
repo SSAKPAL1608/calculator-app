@@ -56,11 +56,24 @@ function inputDigit(digit) {
     }
 }
 
+function inputDecimal(dot) {
+
+    if (calculator.haveSecondOperand === true) {
+        calculator.displayValue = "0."
+      calculator.haveSecondOperand = false;
+      return
+    }
+  
+    if (!calculator.displayValue.includes(dot)) {
+      calculator.displayValue += dot;
+    }
+  }
+
 function updateDisplay() {
     // select the element with id of `display`
     const display = document.getElementById('display')
     // update the value of the element with the contents of `displayValue`
-    display.textContent = Number(calculator.displayValue).toLocaleString();
+    display.textContent = Number(calculator.displayValue).toLocaleString('en-US', { maximumFractionDigits: 7 });
 }
 
 function handleOperator(nextOperator) {
@@ -130,7 +143,7 @@ function handleInput(input) {
             calculator.displayValue = calculator.displayValue.slice(0, -1)
             break            
         case '.':
-            !calculator.displayValue.includes('.') ? calculator.displayValue += '.' : null
+            inputDecimal(input)
             break
         case 'RESET':
             resetCalculator()
