@@ -77,7 +77,7 @@ function updateDisplay() {
     // select the element with id of `display`
     const display = document.getElementById('display')
     // update the value of the element with the contents of `displayValue`
-    display.textContent = Number(calculator.displayValue) <= 999999999 ? Number(calculator.displayValue).toLocaleString('en-US', { maximumFractionDigits: decimalPercision }) : Number(calculator.displayValue).toExponential(4) ;
+    display.textContent = Number(calculator.displayValue) <= 99999999999 ? Number(calculator.displayValue).toLocaleString('en-US', { maximumFractionDigits: decimalPercision }) : Number(calculator.displayValue).toExponential(4) ;
 }
 
 function handleOperator(nextOperator) {
