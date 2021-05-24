@@ -56,7 +56,7 @@ This was another excellent exercise in CSS grid and flexbox, so I deepened my kn
 
 ### Continued development
 
-While working on this project, I was thinking the next project should include React, so that will be the focus for my next project.  Likewise, I am really enjoying the practice I am getting using CSS grid and flexbox.
+While working on this project, I was thinking the next project should include React, so that will be the focus for my next project.  Likewise, I am really enjoying the practice that I am getting using CSS grid and flexbox.
 
 ### Useful resources
 - [How to build a Calculator App with JavaScrip](https://freshman.tech/calculator/) - This is an excellent resource for the javascript for a calculator app.
