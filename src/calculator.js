@@ -10,6 +10,7 @@ const calculator = {
 }
 const existingTheme = localStorage.getItem('calculator-theme') ? localStorage.getItem('calculator-theme') : 'theme1'
 const themeToggles = document.querySelectorAll('label')
+const decimalPercision = 10
 
 // handle the changes to the theme
 function toggleTheme(switchToTheme) {
@@ -73,7 +74,7 @@ function updateDisplay() {
     // select the element with id of `display`
     const display = document.getElementById('display')
     // update the value of the element with the contents of `displayValue`
-    display.textContent = Number(calculator.displayValue).toLocaleString('en-US', { maximumFractionDigits: 7 });
+    display.textContent = Number(calculator.displayValue).toLocaleString('en-US', { maximumFractionDigits: decimalPercision });
 }
 
 function handleOperator(nextOperator) {
@@ -93,7 +94,7 @@ function handleOperator(nextOperator) {
         calculator.firstOperand = inputValue;
     } else if (operator) {
         const result = calculate(firstOperand, inputValue, operator);
-        calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
+        calculator.displayValue = `${parseFloat(result.toFixed(decimalPercision))}`;
         calculator.firstOperand = result;
     }
 
