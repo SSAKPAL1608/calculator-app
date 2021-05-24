@@ -14,7 +14,7 @@ const decimalPercision = 10
 
 // handle the changes to the theme
 function toggleTheme(switchToTheme) {
-    document.querySelector('body').setAttribute('color-scheme', switchToTheme)
+    document.documentElement.setAttribute('color-scheme', switchToTheme)
     // remove 'toggled-on' from all the labels
     themeToggles.forEach(theme => theme.classList.remove('toggled-on'))
 
