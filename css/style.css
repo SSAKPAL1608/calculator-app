@@ -1,4 +1,4 @@
-[color-scheme="theme1"] {
+[data-color-scheme="theme1"] {
     /* background colors */
     --main-bg-color: hsl(222, 26%, 31%);
     --keypad-toggle-bg-color: hsl(223, 31%, 20%);
@@ -21,7 +21,7 @@
     --text-equal-key-color: #fff;
 }
 
-[color-scheme="theme2"] {
+[data-color-scheme="theme2"] {
     /* background colors */
     --main-bg-color: hsl(0, 0%, 90%);
     --keypad-toggle-bg-color: hsl(0, 5%, 81%);
@@ -45,7 +45,7 @@
 }
 
 
-[color-scheme="theme3"] {
+[data-color-scheme="theme3"] {
     /* background colors */
     --main-bg-color: hsl(268, 75%, 9%);
     --keypad-toggle-bg-color: hsl(268, 71%, 12%);
