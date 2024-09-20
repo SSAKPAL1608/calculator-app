@@ -1,0 +1,364 @@
+    1  #!/usr/bin/env bash
+    2  # Copyright (c) Meta Platforms, Inc. and affiliates.
+    3  # This software may be used and distributed according to the terms of the Llama 2 Community License Agreement.
+    4  set -e
+    5  read -p "Enter the URL from email: " PRESIGNED_URL
+    6  echo ""
+    7  read -p "Enter the list of models to download without spaces (8B,8B-instruct,70B,70B-instruct), or press Enter for all: " MODEL_SIZE
+    8  TARGET_FOLDER="."             # where all files should end up
+    9  mkdir -p ${TARGET_FOLDER}
+   10  if [[ $MODEL_SIZE == "" ]]; then     MODEL_SIZE="8B,8B-instruct,70B,70B-instruct"; fi
+   11  echo "Downloading LICENSE and Acceptable Usage Policy"
+   12  wget --continue ${PRESIGNED_URL/'*'/"LICENSE"} -O ${TARGET_FOLDER}"/LICENSE"
+   13  #!/usr/bin/env bash
+   14  # Copyright (c) Meta Platforms, Inc. and affiliates.
+   15  # This software may be used and distributed according to the terms of the Llama 2 Community License Agreement.
+   16  set -e
+   17  read -p "Enter the URL from email: " PRESIGNED_URL
+   18  echo ""
+   19  read -p "Enter the list of models to download without spaces (8B,8B-instruct,70B,70B-instruct), or press Enter for all: " MODEL_SIZE
+   20  TARGET_FOLDER="."             # where all files should end up
+   21  mkdir -p ${TARGET_FOLDER}
+   22  if [[ $MODEL_SIZE == "" ]]; then     MODEL_SIZE="8B,8B-instruct,70B,70B-instruct"; fi
+   23  echo "Downloading LICENSE and Acceptable Usage Policy"
+   24  wget --continue ${PRESIGNED_URL/'*'/"LICENSE"} -O ${TARGET_FOLDER}"/LICENSE"
+   25  #!/usr/bin/env bash
+   26  # Copyright (c) Meta Platforms, Inc. and affiliates.
+   27  # This software may be used and distributed according to the terms of the Llama 2 Community License Agreement.
+   28  set -e
+   29  read -p "Enter the URL from email: " PRESIGNED_URL
+   30  echo ""
+   31  read -p "Enter the list of models to download without spaces (8B,8B-instruct,70B,70B-instruct), or press Enter for all: " MODEL_SIZE
+   32  TARGET_FOLDER="."             # where all files should end up
+   33  mkdir -p ${TARGET_FOLDER}
+   34  if [[ $MODEL_SIZE == "" ]]; then     MODEL_SIZE="8B,8B-instruct,70B,70B-instruct"; fi
+   35  echo "Downloading LICENSE and Acceptable Usage Policy"
+   36  wget --continue ${PRESIGNED_URL/'*'/"LICENSE"} -O ${TARGET_FOLDER}"/LICENSE"
+   37  touch boomerang-pord.pem
+   38  chmod 777 boomerang-prod.pem 
+   39  [200~chmod 600 ~/.ssh/boomerang-prod.pem
+   40  chmod 600 ~/.ssh/boomerang-prod.pem
+   41  git config 'username'
+   42  git config 'user.email'
+   43  git config 'shreyasakpal1608@gmail.com'
+   44  git config 'SSAKPAL1608'
+   45  git config --global user.name "SSAKPAL1608"
+   46  git credential-cache exit
+   47  git config 'user.email'
+   48  git config --global user.name "SSAKPAL1608"
+   49  git config --global user.email "shreyasakpal1608@gmail.com"
+   50  git config --global user.name "SSAKPAL1608"
+   51  git config 'user.email'
+   52  pwd
+   53  mkdir shreya
+   54  cd shreya
+   55  mkdir repo
+   56  cd repo
+   57  pwd
+   58  mkdir test_automation_project
+   59  cd test_automation_project/
+   60  git init 
+   61  ls
+   62  ls -R
+   63  ls -help
+   64  ls --help
+   65  ls -a
+   66  git push
+   67  vi README.md
+   68  cat README.md 
+   69  git status
+   70  git add README.md
+   71  git commit -m "added automation script"
+   72  git status
+   73  git push
+   74  git branch -M main
+   75  git remote add origin https://github.com/SSAKPAL1608/TestAutomation.git
+   76  git push
+   77   git push --set-upstream origin main
+   78  git config 
+   79  history
+   80   git config 'user.email'
+   81  git config --global --unset credential.helper
+   82  git status
+   83  git commit --help
+   84  help
+   85  git help
+   86  git help commit
+   87  git help -a
+   88  git log
+   89  git push 
+   90   git push --set-upstream origin main
+   91  git remote -v
+   92  
+   93  
+   94  git credential-manager uninstall
+   95  [200~cmdkey /delete:git:https://github.com
+   96  cmdkey /delete:git:https://github.com
+   97  git push
+   98   git config 'user.email'
+   99  history | grep upstream
+  100  git push --set-upstream origin main
+  101  git remote -v
+  102  git push --set-upstream origin main
+  103  git push origin main
+  104  ping githuhb.com
+  105  pwd
+  106  ls
+  107  cd shreya
+  108  ls
+  109  cd repo
+  110  ls
+  111  cd test_automation_project/
+  112  pwd
+  113  git status
+  114  git push -u origin main
+  115  git credential-manager install
+  116   git-credential-manager [command] [options]
+  117  history
+  118  git-credential-manager install 
+  119  git-credential-manager get
+  120  git-credential-manager diagnose
+  121  git-credential-manager configure
+  122  git-credential-manager get
+  123  git push -u origin main
+  124  git config --global credential.helper manager-core
+  125  git config --global credential.helper manager-core --replace-all
+  126  git push -u origin main
+  127  history
+  128  previous_command | tee output.txt
+  129  history | tee storedhistory.txt
+  130  ls
+  131  cat storedhistory.txt 
+  132  git commit -m "commands history"
+  133  git add.
+  134  git add storedhistory.txt
+  135  git add storedhistory.txt 
+  136  git commit -m "commands history"
+  137  git push
+  138  git config user.name "SSAKPAL1608"
+  139  git config "SSAKPAL1608"
+  140  pwd
+  141  git config user.email
+  142   cd test_automation_project/
+  143  cd shreya
+  144  pwd
+  145  cd test_automation_project
+  146  ls
+  147  cd repo
+  148  ls
+  149  cd test_automation_project/
+  150  pwd
+  151  ls
+  152  cd ..
+  153  git clone https://github.com/davidrhyne/calculator-app.git
+  154  ls
+  155  cd calculator-app/
+  156  open index.html
+  157  pwd
+  158  cd ..
+  159  pwd
+  160  cd test_automation_project/
+  161  pwd
+  162  git clone https://github.com/davidrhyne/calculator-app.git
+  163  git status
+  164  git add .
+  165  git commit -m "added"
+  166  git push
+  167  pwd
+  168  cd ..
+  169  pwd
+  170  pwd
+  171  find . -type d -name "calculator-app-automation"
+  172  pwd
+  173  cd ..
+  174  pwd
+  175  cd ..
+  176  pwd
+  177  find . -type d -name "calculator-app-automation"
+  178  cp ./IdeaProjects/calculator-app-automation /c/Users/rohan/shreya/repo/test_automation_project
+  179  cp -r ./IdeaProjects/calculator-app-automation /c/Users/rohan/shreya/repo/test_automation_project
+  180  pwd
+  181  cd  /c/Users/rohan/shreya/repo/test_automation_project
+  182  ls
+  183  git status
+  184  git commit -m "add folder"
+  185  git status
+  186  git add .
+  187  git status
+  188  ls
+  189  cd calculator-app-automation/
+  190  git status
+  191  git add .
+  192  git commit -m "Files add"
+  193  git status
+  194  cd
+  195  pwd
+  196  cd ~/shreya/repo/test_automation_project/calculator-app-automation
+  197  pwd
+  198  git status
+  199  git remote -v
+  200  git remote add origin https://github.com/SSAKPAL1608/calculator-app-automation.git
+  201  git remote -v
+  202   git branch -M main
+  203  git push
+  204    git push --set-upstream origin main
+  205  git pull
+  206  git pull origin main
+  207  git status
+  208  git push origin
+  209  git push origin main
+  210  git pull
+  211  git fetch origin main
+  212  git status
+  213  git pull
+  214  git pull origin main
+  215  git merge
+  216  git merge origin main
+  217  git merge main
+  218  git rebase
+  219   git branch --set-upstream-to=origin/main main
+  220  git rebase main
+  221  git status
+  222  git pull
+  223  git pull origin main --allow-unrelated-histories
+  224  git status
+  225  git push
+  226  cd ..
+  227  pwd
+  228  git status
+  229  git add .
+  230  git commit -m "add"
+  231  git push
+  232  history
+  233  history | tee filehistory.txt
+  234  git status
+  235  git add .
+  236  git commit -m "add"
+  237  git push
+  238  pwd
+  239  cd shreya
+  240  pwd
+  241  ls
+  242  cd repo
+  243  pwd
+  244  ls
+  245  cd calculator-app/
+  246  PWD
+  247  LS
+  248  CD ..
+  249  cd ..
+  250  pwd
+  251  ls
+  252  cd test_automation_project/
+  253  pwd
+  254  git submodule https://github.com/davidrhyne/calculator-app.git /shreya/repo/calculator-app
+  255  git submodule add https://github.com/davidrhyne/calculator-app.git /shreya/repo/calculator-app
+  256  ls
+  257  cd calculator-app
+  258  pwd
+  259  cd ..
+  260  pwd
+  261  git submodule add https://github.com/davidrhyne/calculator-app.git /c/Users/rohan/shreya/repo/test_automation_project/calculator-app
+  262  cd calculator-app
+  263  ls
+  264  git status
+  265  ls
+  266  git add .
+  267  git commit -m "submodules added"
+  268  git push
+  269  pwd
+  270  cd ..
+  271  pwd
+  272  cd ..
+  273  ls
+  274  cd test_automation_project/
+  275  ls
+  276  cd calculator-app-automation
+  277  pwd
+  278   git submodule add https://github.com/SSAKPAL1608/calculator-app-automation.git /c/Users/rohan/shreya/repo/test_automation_project/calculator-app-automation
+  279  ls
+  280  guit add .
+  281  git add .
+  282  git status
+  283  git commit -m "add submodule "
+  284  git push
+  285  git status
+  286  git pull
+  287  cd ..
+  288  pwd
+  289   git submodule add https://github.com/SSAKPAL1608/calculator-app-automation.git /c/Users/rohan/shreya/repo/test_automation_project/calculator-app-automation
+  290  git add .
+  291  git commit -m "added"
+  292  git push
+  293  git status
+  294  git push 
+  295  git credential-cache exit
+  296  rm -r calculator-app
+  297  rm -rf calculator-app
+  298  ls
+  299  rm -rf calculator-app-automation/
+  300  ls
+  301  git status
+  302  git add .
+  303  git commit -m "delete existing"
+  304  git push
+  305  cd ..
+  306  pwd
+  307  ls
+  308   git submodule add https://github.com/davidrhyne/calculator-app.git /c/Users/rohan/shreya/repo/test_automation_project/calculator-app
+  309  cd test_automation_project/
+  310  pwd
+  311   git submodule add https://github.com/davidrhyne/calculator-app.git /c/Users/rohan/shreya/repo/test_automation_project/calculator-app
+  312  git remote add origin calculator-app
+  313  git remote add origin https://github.com/SSAKPAL1608/calculator-app.git
+  314  git remote remove origin
+  315  git remote -v
+  316   git remote add origin https://github.com/SSAKPAL1608/calculator-app.git
+  317  git pull
+  318  git remote -v
+  319  git remote remove origin
+  320  git remote -v
+  321  git remote add origin https://github.com/SSAKPAL1608/TestAutomation.git
+  322  git remote -v
+  323  git pull
+  324  git branch --set-upstream-to=origin/main main
+  325  git pull
+  326  cd ..
+  327  pwd
+  328  cd calculator-app/
+  329  pwd
+  330  git remote -v
+  331  git remote remove origin
+  332  git remote add origin https://github.com/SSAKPAL1608/calculator-app.git
+  333  git remote -v
+  334  git pull
+  335   git branch --set-upstream-to=origin/main main
+  336  git pull
+  337  cd ..
+  338  pwd
+  339  cd test_automation_project/
+  340  pwd
+  341   git submodule add https://github.com/SSAKPAL1608/calculator-app.gt /c/Users/rohan/shreya/repo/calculator-app
+  342   git submodule add https://github.com/SSAKPAL1608/calculator-app.git /c/Users/rohan/shreya/repo/calculator-app
+  343  git submodule add https://github.com/SSAKPAL1608/calculator-app.git calculator-app
+  344  git submodule status
+  345  git status
+  346  git add .
+  347  git commit -m "add submodule"
+  348  git push
+  349  pwd
+  350  cd ..
+  351  ls
+  352  cd test_automation_project/
+  353  pwd
+  354  git submodule add https://github.com/SSAKPAL1608/calculator-app-automation.git
+  355  git submodule status
+  356  git status
+  357  git add .
+  358  git commit -m "add submodule "
+  359  git push
+  360  git status
+  361  cd calculator-app
+  362  git status
+  363  history
+  364  history | tee submodule.txt
