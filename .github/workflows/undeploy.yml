@@ -1,0 +1,50 @@
+name: Manual Undeploy from Google Cloud Storage
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Select the branch to undeploy'
+        required: true
+        default: 'main'
+
+jobs:
+  undeploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the latest code from the specified branch
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
+      # Verify that the GCP Service Account Key is set
+      - name: Verify GCP Service Account Key
+        run: |
+          echo "Verifying GCP Service Account Key..."
+          if [ -z "${{ secrets.GCP_SA_KEY }}" ]; then
+            echo "GCP_SA_KEY is not set."
+            exit 1
+          else
+            echo "GCP_SA_KEY is set."
+            echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > /tmp/gcp-key.json
+            echo "GCP Service Account Key is valid and saved to /tmp/gcp-key.json"
+          fi
+
+      # Authenticate the service account
+      - name: Authenticate to Google Cloud
+        run: |
+          gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
+
+      # List bucket contents (to verify access)
+      - name: List Bucket Contents
+        run: |
+          echo "Listing contents of the bucket:"
+          gsutil ls gs://shreya-new-bucket
+
+      # Undeploy from Google Cloud Storage
+      - name: Undeploy from Google Cloud Storage
+        run: |
+          echo "Removing calculator-app from the bucket:"
+          gsutil -m rm -r gs://shreya-new-bucket/calculator-app
