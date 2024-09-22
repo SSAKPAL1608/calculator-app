@@ -1,7 +1,12 @@
 name: Manual Deploy to Google Cloud Storage
 
 on:
-  workflow_dispatch:  # Allow manual trigger for deployment
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Select the branch to deploy'
+        required: true
+        default: 'main'  # You can set a default branch
 
 jobs:
   deploy:
@@ -10,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.branch }}  # Use the selected branch
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
@@ -20,4 +27,5 @@ jobs:
 
       - name: Deploy to Google Cloud Storage
         run: |
-          gsutil cp -r ./calculator-app gs://shreya-new-bucket
+          gsutil cp -r ./ gs://shreya-new-bucket
+
