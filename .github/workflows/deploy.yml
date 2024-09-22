@@ -6,7 +6,7 @@ on:
       branch:
         description: 'Select the branch to deploy'
         required: true
-        default: 'main'  # You can set a default branch
+        default: 'main'
 
 jobs:
   deploy:
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.inputs.branch }}  # Use the selected branch
+          ref: ${{ github.event.inputs.branch }}
 
       # Verify that the GCP Service Account Key is set
       - name: Verify GCP Service Account Key
@@ -39,6 +39,24 @@ jobs:
           project_id: test-automation-shreya
           service_account_key: /tmp/gcp-key.json
           export_default_credentials: true
+
+      # Check the active account
+      - name: Check Active Account
+        run: |
+          echo "Active account:"
+          gcloud auth list
+
+      # List available projects
+      - name: List Available Projects
+        run: |
+          echo "Available projects:"
+          gcloud projects list
+
+      # List bucket contents (to verify access)
+      - name: List Bucket Contents
+        run: |
+          echo "Listing contents of the bucket:"
+          gsutil ls gs://shreya-new-bucket
 
       # Deploy to Google Cloud Storage
       - name: Deploy to Google Cloud Storage
