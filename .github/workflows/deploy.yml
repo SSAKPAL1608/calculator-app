@@ -7,9 +7,6 @@ on:
         description: 'Select the branch to deploy'
         required: true
         default: 'main'
-      service_account_key:
-        description: 'Specify the GCP Service Account Key'
-        required: true
 
 jobs:
   deploy:
@@ -26,12 +23,12 @@ jobs:
       - name: Verify GCP Service Account Key
         run: |
           echo "Verifying GCP Service Account Key..."
-          if [ -z "${{ secrets.GCLOUD_SERVICE_KEY }}" ]; then
-            echo "GCP_SERVICE_KEY is not set."
+          if [ -z "${{ secrets.GCP_SA_KEY }}" ]; then
+            echo "GCP_SA_KEY is not set."
             exit 1
           else
-            echo "GCP_SERVICE_KEY is set."
-            echo "${{ secrets.GCLOUD_SERVICE_KEY }}" > /tmp/gcp-key.json
+            echo "GCP_SA_KEY is set."
+            echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > /tmp/gcp-key.json
             echo "GCP Service Account Key is valid and saved to /tmp/gcp-key.json"
           fi
 
@@ -40,7 +37,7 @@ jobs:
         run: |
           gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
 
-      # Check the active account
+#      # Check the active account
 #      - name: Check Active Account
 #        run: |
 #          echo "Active account:"
