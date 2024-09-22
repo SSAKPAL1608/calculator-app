@@ -1,0 +1,26 @@
+name: Manual Deploy to Google Cloud Storage
+
+on:
+  workflow_dispatch:  # Allow manual trigger for deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the latest code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Set up Google Cloud SDK
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: test-automation-shreya
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+      # Copy the static files to Google Cloud Storage
+      - name: Deploy to Google Cloud Storage
+        run: |
+          gsutil cp -r ./calculator-app gs://shreya-new-bucket
