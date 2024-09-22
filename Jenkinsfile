@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-credentials')
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp_credentials')
     }
 
     stages {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning repository...'
-                git url: 'https://github.com/YOUR_USERNAME/YOUR_REPO.git', branch: 'main'
+                git url: 'https://github.com/SSAKPAL1608/calculator-app.git', branch: 'main'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
                 script {
                     echo 'Deploying to Google Cloud Storage...'
                     sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
-                    sh 'gsutil cp ./index.html gs://your-bucket-name/'
+                    sh 'gsutil cp -r ./ gs://shreya-new-bucket/calculator-app'
                 }
             }
         }
