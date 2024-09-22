@@ -20,7 +20,7 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      # Copy the static files to Google Cloud Storage
+      # Copy the static files to Google Cloud Storages
       - name: Deploy to Google Cloud Storage
         run: |
           gsutil cp -r ./calculator-app gs://shreya-new-bucket
