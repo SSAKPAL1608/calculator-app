@@ -4,6 +4,7 @@
 #####################################################
 *.sketch
 *.fig
+service-account-key.json
 
 # Avoid accidental XD upload if you convert the design file
 ###############################################
