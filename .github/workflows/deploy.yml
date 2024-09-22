@@ -7,6 +7,9 @@ on:
         description: 'Select the branch to deploy'
         required: true
         default: 'main'
+      service_account_key:
+        description: 'Specify the GCP Service Account Key'
+        required: true
 
 jobs:
   deploy:
@@ -23,34 +26,31 @@ jobs:
       - name: Verify GCP Service Account Key
         run: |
           echo "Verifying GCP Service Account Key..."
-          if [ -z "${{ secrets.GCP_SA_KEY }}" ]; then
-            echo "GCP_SA_KEY is not set."
+          if [ -z "${{ secrets.GCLOUD_SERVICE_KEY }}" ]; then
+            echo "GCP_SERVICE_KEY is not set."
             exit 1
           else
-            echo "GCP_SA_KEY is set."
-            echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > /tmp/gcp-key.json
+            echo "GCP_SERVICE_KEY is set."
+            echo "${{ secrets.GCLOUD_SERVICE_KEY }}" > /tmp/gcp-key.json
             echo "GCP Service Account Key is valid and saved to /tmp/gcp-key.json"
           fi
 
-      # Set up Google Cloud SDK
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v1
-        with:
-          project_id: test-automation-shreya
-          service_account_key: /tmp/gcp-key.json
-          export_default_credentials: true
+      # Authenticate the service account
+      - name: Authenticate to Google Cloud
+        run: |
+          gcloud auth activate-service-account --key-file=/tmp/gcp-key.json
 
       # Check the active account
-      - name: Check Active Account
-        run: |
-          echo "Active account:"
-          gcloud auth list
-
-      # List available projects
-      - name: List Available Projects
-        run: |
-          echo "Available projects:"
-          gcloud projects list
+#      - name: Check Active Account
+#        run: |
+#          echo "Active account:"
+#          gcloud auth list
+#
+#      # List available projects
+#      - name: List Available Projects
+#        run: |
+#          echo "Available projects:"
+#          gcloud projects list
 
       # List bucket contents (to verify access)
       - name: List Bucket Contents
